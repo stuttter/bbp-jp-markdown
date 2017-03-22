@@ -6,7 +6,7 @@
  * Description: Use Jetpack Markdown in bbPress Forums, Topics, and Replies
  * Author:      John James Jacoby
  * Author URI:  https://jjj.blog
- * Version:     0.1.0
+ * Version:     0.2.0
  * Text Domain: bbp-jp-markdown
  * Domain Path: /languages/
  * License:     GPLv2 or later (license.txt)
@@ -62,6 +62,12 @@ function bbp_jp_markdown_init() {
 	remove_filter( 'bbp_get_form_forum_content', 'bbp_code_trick_reverse' );
 	remove_filter( 'bbp_get_form_topic_content', 'bbp_code_trick_reverse' );
 	remove_filter( 'bbp_get_form_reply_content', 'bbp_code_trick_reverse' );
+	remove_filter( 'bbp_get_form_forum_content', 'esc_textarea'           );
+	remove_filter( 'bbp_get_form_topic_content', 'esc_textarea'           );
+	remove_filter( 'bbp_get_form_reply_content', 'esc_textarea'           );
+	remove_filter( 'bbp_get_form_forum_content', 'trim'                   );
+	remove_filter( 'bbp_get_form_topic_content', 'trim'                   );
+	remove_filter( 'bbp_get_form_reply_content', 'trim'                   );
 
 	// Hook
 	add_filter( 'bbp_get_form_forum_content', 'bbp_jp_markdown_edit', 8 );
