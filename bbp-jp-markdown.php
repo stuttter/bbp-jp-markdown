@@ -83,7 +83,7 @@ function bbp_jp_markdown_edit( $post_content = '' ) {
 
 	// Maybe swap post_content for post_content_filtered
 	if ( bbp_is_topic_edit() || bbp_is_forum_edit() || bbp_is_reply_edit() ) {
-		$post_content = bbp_get_global_post_field( 'post_content_filtered', 'edit' );
+		$post_content = bbp_get_global_post_field( 'post_content_filtered', 'raw' );
 	}
 
 	return $post_content;
